@@ -37,50 +37,37 @@ export class LoginComponent implements OnInit {
 
      this.service.getAlldata().subscribe((userSQL)=>{
       this.userdetails=userSQL.data
+      const arr1: any[]= [];let arr2: any[]= [];
+
+      arr1.push(this.createuser.email)
+
+
   //loop   userSQL.data
       Object.keys(this.userdetails).forEach(key => {
 
-        const arr1= [];
-        const arr2: any[]= [];
-        arr1.push(this.createuser.email)
 
-        arr2.push(this.userdetails[key].email)
-        const result= arr2.find((res)=>{
-
-          return this.createuser.email==res
-
-        })
-
-        console.log(this.createuser.email!=result,'มีเเล้ว')
-
-        if(this.createuser.email==result){
-
-
-          console.log('มีเเล้ว')
-
-
-      }
-  else  if(this.createuser.email!=result){
-
-
-        console.log('ไม่มี')
-
-
-    }
-    else  if(result!=undefined){
-
-
-        console.log('undefined')
-
-
-    }
-
-
-
-
-
+       return arr2.push(this.userdetails[key].email)
 
       });
+
+       const total = arr2.some(item =>{
+
+      return item==this.createuser.email
+
+      })
+    console.log(total)
+    if(total==true){
+      console.log('welcome back User')
+      this.router.navigateByUrl('/role')
+    }
+    if(total==false){
+      this.service.createData(this.createuser).subscribe((result)=>{
+        console.log('createData')
+        this.router.navigateByUrl('/role')
+      })
+
+    }
+
 
 
 
