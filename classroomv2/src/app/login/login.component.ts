@@ -37,6 +37,7 @@ export class LoginComponent implements OnInit {
 
      this.service.getAlldata().subscribe((userSQL)=>{
       this.userdetails=userSQL.data
+      localStorage.setItem('google_auth',JSON.stringify(this.createuser));
       const arr1: any[]= [];let arr2: any[]= [];
 
       arr1.push(this.createuser.email)
@@ -55,12 +56,16 @@ export class LoginComponent implements OnInit {
       return item==this.createuser.email
 
       })
-    console.log(total)
-    if(total==true){
+      console.log(total)
+
+    if(total==true)
+    {
       console.log('welcome back User')
       this.router.navigateByUrl('/role')
     }
-    if(total==false){
+
+    if(total==false)
+    {
       this.service.createData(this.createuser).subscribe((result)=>{
         console.log('createData')
         this.router.navigateByUrl('/role')

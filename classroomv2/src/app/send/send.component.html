@@ -1,0 +1,69 @@
+<div class="fromlogin">
+  <header>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+   <nav class="navbar navbar-inverse">
+
+       <div class="container-fluid">
+           <div class="navbar-header">
+               <a class="navbar-brand" style="color:Tomato;">{{namework}}</a>
+
+           </div>
+           <ul class="nav navbar-nav">
+
+
+          </ul>
+
+
+           <p class="head">
+             {{userdetails?.email}}
+
+           </p>
+           <div align="center" >
+            <div class="post" >
+              <button [routerLink]="['/room',passroom]"class="p-button-lg" pButton type="button" label="ย้อนกลับ"  icon="pi pi-google"iconPos="left"></button>
+              <button [routerLink]="['/nameroom',passroom]" class="p-button-lg" pButton type="button" label="ราชชื่อ"  icon="pi pi-google"iconPos="left"></button>
+            </div>
+
+          </div>
+           <div class="out">
+            <button class="p-button-lg" pButton type="button" label="logout" (click)="logout()" icon="pi pi-google"iconPos="left"></button>
+           </div>
+
+       </div>
+
+   </nav>
+  </header>
+  <main>
+<div align="center">
+  <h1>ชื่องาน:{{namework}} </h1>
+    <h4>รายละเอียดงาน:{{detailwork}}</h4>
+    <span>โดย: {{byname}} {{time}} </span>
+</div>
+<div   class="container">
+  <form [style.display]="isVisible ? 'block' : 'none'"[formGroup]="form" (ngSubmit)="submitForm()">
+    <h2>ส่วงงาน</h2>
+    <div class="form-group">
+          <input type="file" (change)="uploadFile($event)">
+      </div>
+      <div class="form-group">
+          <button class="btn btn-danger btn-block btn-lg">Upload</button>
+      </div>
+  </form>
+</div>
+<form [style.display]="sendbutt ? 'block' : 'none'">
+  <h2>งานที่ส่ง</h2>
+ <button (click)="worksand()">งานของคุณ</button>
+ <button (click)="deletework()">แก้ไขงาน</button>
+
+</form>
+
+
+  </main>
+</div>

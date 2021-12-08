@@ -1,0 +1,68 @@
+<div class="fromlogin">
+  <header>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+   <nav class="navbar navbar-inverse">
+
+       <div class="container-fluid">
+           <div class="navbar-header">
+               <a class="navbar-brand" style="color:Tomato;">ระบบส่งเสริมพัฒนาการศึกษาห้องเรียนออนไลน์</a>
+
+           </div>
+           <ul class="nav navbar-nav">
+
+
+          </ul>
+
+
+           <p class="head">
+             {{userdetails?.email}}
+
+           </p>
+
+           <div class="out">
+            <button class="p-button-lg" pButton type="button" label="logout" (click)="logout()" icon="pi pi-google"iconPos="left"></button>
+           </div>
+
+       </div>
+
+   </nav>
+  </header>
+  <main>
+    <div class="roomclass">
+        <button (click)="updata()" class="p-button-lg" pButton type="button" label="แก้ไขชื่อชั้นเรียน"  icon="pi pi-google"iconPos="left"></button>
+        <button [routerLink]="['/post',passroom]"class="p-button-lg" pButton type="button" label="โพสต์งานชั้นเรียน"  icon="pi pi-google"iconPos="left"></button>
+        <button [routerLink]="['/nameroom',passroom]" class="p-button-lg" pButton type="button" label="ราชชื่อ"  icon="pi pi-google"iconPos="left"></button>
+        <button (click)="deleteroom()" class="p-button-lg p-button-danger" pButton type="button" label="ลบชั้นเรียน"  icon="pi pi-google"iconPos="left"></button>
+      </div>
+
+
+        <section  align="center">
+          <div class="name">
+            <h3>ชื่อห้องเรียน:{{this.nameroom}}</h3>
+            <h5>รหัสเข้าห้อง:{{this.pass}} </h5>
+          </div>
+          <br>
+            <div>
+                <h1>งานในชั้นเรียน</h1>
+            </div>
+        </section>
+        <div >
+          <p-table    [value]="cars">
+            <ng-template pTemplate="body" let-car>
+                <tr>
+                  <span class="tableroom">
+                <button (click)="send(car.id)" pButton pRipple type="button"  class="p-button-raised p-button-lg">
+                {{car.name}} โพสต์คำถามใหม่:{{car.workname}}  </button>
+                  </span>
+                  </tr>
+            </ng-template>
+        </p-table>
+        </div>
+
+      </main>
+</div>

@@ -1,1 +1,56 @@
-/* You can add global styles to this file, and also import other style files */
+p.head {
+  display: flex;
+  justify-content: flex-end;
+  color: white;
+  flex-direction: row;
+}
+.out {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0.5em;
+}
+.text {
+  display: grid;
+  justify-content: center;
+  row-gap: 1.5em;
+}
+.bu {
+  display: flex;
+  justify-content: center;
+  column-gap: 0.5em;
+}
+.sea {
+  display: flex;
+  justify-content: center;
+  column-gap: 0.5rem;
+}
+
+.add {
+  display: flex;
+  justify-content: center;
+  column-gap: 0.5em;
+}
+.choo {
+  display: flex;
+  column-gap: 0.5em;
+  justify-content: center;
+}
+.post {
+  width: 50%;
+  display: flex;
+  column-gap: 0.5em;
+}
+.inputpost {
+  display: grid;
+  justify-content: center;
+}
+.tableroom {
+  display: grid;
+  justify-content: center;
+  padding: 0.5em;
+}
+.roomclass {
+  display: flex;
+  justify-content: center;
+  column-gap: 0.5em;
+}

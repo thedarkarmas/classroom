@@ -1,4 +1,30 @@
-{{userdetails?.name}}
-{{userdetails?.email}}
-<button class="p-button-lg" pButton type="button" label="get the fuck out here" (click)="logout()" icon="pi pi-google"iconPos="left"></button>
+<div class="fromlogin">
+  <header>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+   <nav class="navbar navbar-inverse">
+       <div class="container-fluid">
+           <div class="navbar-header">
+               <a class="navbar-brand" style="color:Tomato;">ระบบส่งเสริมพัฒนาการศึกษาห้องเรียนออนไลน์</a>
+           </div>
+           <p class="head">{{userdetails?.email}}</p>
+           <ul class="nav navbar-nav">
+           </ul>
 
+       </div>
+   </nav>
+
+  </header>
+  <main class="choo">
+    <button pButton pRipple type="button" (click)="strole()" label="ผู้เรียน" class="p-button-raised p-button-success p-button-lg"></button>
+
+    <button pButton pRipple type="button" (click)="throle()" label="ผู้สอน" class="p-button-raised p-button-success p-button-lg"></button>
+
+    <button pButton pRipple type="button" (click)="logout()" label="logout" class="p-button-raised p-button-danger p-button-lg" ></button>
+   </main>
+
+</div>

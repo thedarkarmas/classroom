@@ -1,0 +1,96 @@
+<div class="fromlogin">
+  <header>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+   <nav class="navbar navbar-inverse">
+
+       <div class="container-fluid">
+           <div class="navbar-header">
+               <a class="navbar-brand" style="color:Tomato;">ระบบส่งเสริมพัฒนาการศึกษาห้องเรียนออนไลน์</a>
+
+           </div>
+           <ul class="nav navbar-nav">
+
+
+          </ul>
+
+
+           <p class="head">
+             {{userdetails?.email}}
+
+           </p>
+           <div align="center" >
+            <div class="post" >
+              <button [routerLink]="['/room',passroom]"class="p-button-lg" pButton type="button" label="ย้อนกลับ"  icon="pi pi-google"iconPos="left"></button>
+              <button (click)="deletework()" class="p-button-lg" pButton type="button" label="ลบงาน"  icon="pi pi-google"iconPos="left"></button>
+              <button  (click)="editpost()" class="p-button-lg" pButton type="button"  label="แก้ไขงาน"  icon="pi pi-google"iconPos="left"></button>
+
+            </div>
+
+          </div>
+           <div class="out">
+            <button class="p-button-lg" pButton type="button" label="logout" (click)="logout()" icon="pi pi-google"iconPos="left"></button>
+           </div>
+
+       </div>
+
+   </nav>
+  </header>
+  <main>
+    <div align="center">
+      <h1>รายชื่อคนส่งแล้ว:</h1>
+      <p-table  [value]="send">
+        <ng-template pTemplate="header">
+            <tr>
+
+                <th>email:</th>
+                <th>ชื่อ:</th>
+                <th>ไฟล์งาน:</th>
+
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-senddata>
+            <tr>
+
+                <td>{{senddata.email}}</td>
+                <td>{{senddata.name}}</td>
+
+                <td><button (click)="openfile(senddata.id)" pButton type="button" class="p-button-help p-button-lg" label="กดเพื่อเปิดไฟล์" icon="pi pi-prime" iconPos="left"></button></td>
+
+              </tr>
+        </ng-template>
+    </p-table>
+
+    </div>
+    <div align="center">
+      <h1>รายชื่อคนยังไม่ส่ง:</h1>
+      <p-table  [value]="notsend">
+        <ng-template pTemplate="header">
+            <tr>
+
+                <th> email:</th>
+                <th>ชื่อ:</th>
+
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-notsend>
+            <tr>
+
+                <td>{{notsend.email}}</td>
+                <td>{{notsend.firstName}} {{notsend.lastName}}</td>
+
+
+
+              </tr>
+        </ng-template>
+    </p-table>
+
+    </div>
+
+  </main>
+</div>
+
