@@ -20,7 +20,7 @@ p.head {
 i{
     font-size: 3rem;
     margin-right: 0.5rem;
-    color: rgb(255, 238, 0);
+    color: #ffff;
 }
 .out{
     column-gap: 0.5em;
@@ -32,16 +32,16 @@ i{
 tr{
     th{
         font-size: 20px;
-        color: rgb(31, 7, 7); 
-        background-color: rgb(255, 251, 2); 
-        padding: 1rem 1.5rem;  
-        border: 2px solid #ad2121;
+        color: rgb(31, 7, 7);
+        background-color: #85C7DE;
+        padding: 1rem 1.5rem;
+        border: 2px solid #CFE8EF;
     }
     td{
-        color: rgb(2, 1, 1); 
-        font-size: 18px ; 
-        background-color: rgb(255, 251, 2); 
-        padding: 1rem 1.5rem; 
-        border: 2px solid #ad2121;
+        color: rgb(2, 1, 1);
+        font-size: 18px ;
+        background-color: #A0C4E2;
+        padding: 1rem 1.5rem;
+        border: 2px solid #CFE8EF;
     }
 }

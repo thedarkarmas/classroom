@@ -19,12 +19,12 @@ p.head {
 }
 h2{
     font-size: 39px;
-    color: #000;
+    color: #ffff;
 }
 i{
     font-size: 3rem;
     margin-right: 0.5rem;
-    color: rgb(255, 238, 0);
+    color: #ffff;
 }
 .p-button-lg{
     font-size: 18px;
@@ -33,17 +33,17 @@ i{
 tr{
     th{
         font-size: 20px;
-        color: rgb(31, 7, 7); 
-        background-color: rgb(255, 251, 2); 
-        padding: 1rem 5rem;  
-        border: 2px solid #ad2121;
+        color: #ffff;
+        background-color: #008f7a;
+        padding: 1rem 5rem;
+        border: 2px solid #845EC2;
     }
     td{
-         color: rgb(2, 1, 1); 
-        font-size: 18px ; 
-        background-color: rgb(255, 251, 2); 
-        padding: 1rem 1.5rem; 
-        border: 2px solid #ad2121;
+         color: #ffff;
+        font-size: 18px ;
+        background-color: #008e98;
+        padding: 1rem 1.5rem;
+        border: 2px solid #845EC2;
     }
-    
+
 }

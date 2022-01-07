@@ -56,7 +56,7 @@
 </div>
 <div   class="container">
   <form [style.display]="isVisible ? 'block' : 'none'"[formGroup]="form" (ngSubmit)="submitForm()">
-    <h2>ส่งงาน</h2>
+    <h2 align="center">ส่งงาน</h2>
     <div class="form-group">
           <input type="file" (change)="uploadFile($event)">
       </div>
@@ -69,7 +69,8 @@
   </form>
 </div>
 <form [style.display]="sendbutt ? 'block' : 'none'">
-  <h2>งานที่ส่ง</h2>
+
+    <h2 align="center">งานที่ส่ง</h2>
   <div class="O">
     <button class="p-button-lg" pButton type="button" label="งานของคุณ" (click)="worksand()">
     <i class="pi pi-clone"iconPos="left"></i>
@@ -77,6 +78,8 @@
     <button class="p-button-lg" pButton type="button" label="แก้ไขงาน" (click)="deletework()">
       <i class="pi pi-upload"iconPos="left"></i>
   </button></div>
+
+
 </form>
 
 
