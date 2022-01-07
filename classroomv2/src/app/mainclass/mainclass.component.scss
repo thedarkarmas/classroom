@@ -1,0 +1,49 @@
+.navbar-brand {
+    float: left;
+    height: 50px;
+    padding: 15px 15px;
+    font-size: 20px;
+    line-height: 20px;
+    align-content: center;
+}
+.container-fluid{
+    padding-left: 15px;
+}
+p.head {
+    display: flex;
+    justify-content: flex-end;
+    color: white;
+    flex-direction: row;
+    padding-right: 7px;
+    font-size: 18px;
+}
+h2{
+    font-size: 39px;
+    color: #000;
+}
+i{
+    font-size: 3rem;
+    margin-right: 0.5rem;
+    color: rgb(255, 238, 0);
+}
+.p-button-lg{
+    font-size: 18px;
+}
+
+tr{
+    th{
+        font-size: 20px;
+        color: rgb(31, 7, 7); 
+        background-color: rgb(255, 251, 2); 
+        padding: 1rem 5rem;  
+        border: 2px solid #ad2121;
+    }
+    td{
+         color: rgb(2, 1, 1); 
+        font-size: 18px ; 
+        background-color: rgb(255, 251, 2); 
+        padding: 1rem 1.5rem; 
+        border: 2px solid #ad2121;
+    }
+    
+}

@@ -141,7 +141,7 @@ export class ReportComponent implements OnInit {
       });
 
       console.log(this.sendfilename)
-      window.open ("http://192.168.1.55:8887/"+this.sendfilename);
+      window.open ("http://127.0.0.1:8887/"+this.sendfilename);
   })
   }
 

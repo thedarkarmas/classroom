@@ -23,7 +23,9 @@
 
            </p>
            <div class="out">
-            <button class="p-button-lg" pButton type="button" label="logout" (click)="logout()" icon="pi pi-google"iconPos="left"></button>
+            <button class="p-button-lg" pButton type="button" label="Logout" (click)="logout()">
+              <i class="pi pi-power-off"iconPos="left"></i>
+            </button>
            </div>
 
        </div>
@@ -44,12 +46,16 @@
           </span>
     </h4>
     <div class="sea">
-      <button pButton type="button" (click)="search(pass.value)" class="p-button-success p-button-lg" label="ค้นหา" icon="pi pi-search" iconPos="left"></button>
-     <button pButton type="button" (click)="back()" class="p-button-danger p-button-lg" label="กลับหน้าหลัก" icon="pi pi-times" iconPos="left"></button>
+      <button pButton type="button" (click)="search(pass.value)" class="p-button-success p-button-lg" label="ค้นหา">
+        <i class="pi pi-search"iconPos="left"></i>
+      </button>
+     <button pButton type="button" (click)="back()" class="p-button-danger p-button-lg" label="กลับหน้าหลัก">
+      <i class="pi pi-arrow-left"iconPos="left"></i>
+     </button>
     </div>
 
 
-
+    <br>
       </div>
       <p-table  [value]="cars">
         <ng-template pTemplate="header">

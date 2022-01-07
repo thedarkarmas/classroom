@@ -10,7 +10,7 @@
 
        <div class="container-fluid">
            <div class="navbar-header">
-               <a class="navbar-brand" style="color:Tomato;">ระบบส่งเสริมพัฒนาการศึกษาห้องเรียนออนไลน์</a>
+               <a [routerLink]="['/mainclass']" class="navbar-brand" style="color:Tomato;">ระบบส่งเสริมพัฒนาการศึกษาห้องเรียนออนไลน์</a>
 
            </div>
            <ul class="nav navbar-nav">
@@ -25,7 +25,9 @@
            </p>
 
            <div class="out">
-            <button class="p-button-lg" pButton type="button" label="logout" (click)="logout()" icon="pi pi-google"iconPos="left"></button>
+            <button class="p-button-lg" pButton type="button" label="logout" (click)="logout()">
+              <i class="pi pi-power-off"iconPos="left"></i>
+            </button>
            </div>
 
        </div>
@@ -34,10 +36,21 @@
   </header>
   <main>
     <div class="roomclass">
-        <button (click)="updata()" class="p-button-lg" pButton type="button" label="แก้ไขชื่อชั้นเรียน"  icon="pi pi-google"iconPos="left"></button>
-        <button [routerLink]="['/post',passroom]"class="p-button-lg" pButton type="button" label="โพสต์งานชั้นเรียน"  icon="pi pi-google"iconPos="left"></button>
-        <button [routerLink]="['/nameroom',passroom]" class="p-button-lg" pButton type="button" label="ราชชื่อ"  icon="pi pi-google"iconPos="left"></button>
-        <button (click)="deleteroom()" class="p-button-lg p-button-danger" pButton type="button" label="ลบชั้นเรียน"  icon="pi pi-google"iconPos="left"></button>
+      <div *ngIf="isShown" class="row container-fluid"  id="divshow" >
+        <div class="roomclass">
+        <button (click)="updata()" class="p-button-lg" pButton type="button" label="แก้ไขชื่อชั้นเรียน">
+          <i class="pi pi-palette"iconPos="left"></i>
+        </button>
+        <button [routerLink]="['/post',passroom]"class="p-button-lg" pButton type="button" label="โพสต์งานชั้นเรียน">
+          <i class="pi pi-plus"iconPos="left"></i></button>
+        <button (click)="deleteroom()" class="p-button-lg p-button-danger" pButton type="button" label="ลบชั้นเรียน">
+          <i class="pi pi-times"iconPos="left"></i>
+        </button>
+      </div>
+      </div>
+
+        <button [routerLink]="['/nameroom',passroom]" class="p-button-lg" pButton type="button" label="ราชชื่อ">
+          <i class="pi pi-user"iconPos="left"></i></button>
       </div>
 
 
@@ -57,7 +70,7 @@
                 <tr>
                   <span class="tableroom">
                 <button (click)="send(car.id)" pButton pRipple type="button"  class="p-button-raised p-button-lg">
-                {{car.name}} โพสต์คำถามใหม่:{{car.workname}}  </button>
+                {{car.name}} โพสต์คำถามใหม่ : {{car.workname}}  </button>
                   </span>
                   </tr>
             </ng-template>

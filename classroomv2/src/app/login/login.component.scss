@@ -1,0 +1,32 @@
+.navbar-brand {
+    float: left;
+    height: 50px;
+    padding: 15px 15px;
+    font-size: 20px;
+    line-height: 20px;
+    align-content: center;
+}
+.container-fluid {
+    padding-right: 15px;
+    padding-left: 15px;
+    /* margin-right: auto; */
+    display: flex;
+    margin-left: auto;
+    justify-content: space-evenly;
+    align-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+.ASON{
+    color: rgb(255, 255, 255)
+
+}
+.p-button-lg{
+    font-size: 20px;
+}
+i{
+    font-size: 4.25rem;
+    margin-right: 0.5rem;
+    color: red;
+}
+

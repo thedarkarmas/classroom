@@ -10,7 +10,7 @@
 
        <div class="container-fluid">
            <div class="navbar-header">
-               <a class="navbar-brand" style="color:Tomato;">ระบบส่งเสริมพัฒนาการศึกษาห้องเรียนออนไลน์</a>
+               <a [routerLink]="['/mainclass']" class="navbar-brand" style="color:Tomato;">ระบบส่งเสริมพัฒนาการศึกษาห้องเรียนออนไลน์</a>
 
            </div>
            <ul class="nav navbar-nav">
@@ -25,15 +25,23 @@
            </p>
            <div align="center" >
             <div class="post" >
-              <button [routerLink]="['/room',passroom]"class="p-button-lg" pButton type="button" label="ย้อนกลับ"  icon="pi pi-google"iconPos="left"></button>
-              <button (click)="deletework()" class="p-button-lg" pButton type="button" label="ลบงาน"  icon="pi pi-google"iconPos="left"></button>
-              <button  (click)="editpost()" class="p-button-lg" pButton type="button"  label="แก้ไขงาน"  icon="pi pi-google"iconPos="left"></button>
+              
 
             </div>
 
           </div>
            <div class="out">
-            <button class="p-button-lg" pButton type="button" label="logout" (click)="logout()" icon="pi pi-google"iconPos="left"></button>
+            <button [routerLink]="['/room',passroom]"class="p-button-lg" pButton type="button" label="ย้อนกลับ">
+              <i class="pi pi-chevron-left"iconPos="left"></i></button>
+            <button (click)="deletework()" class="p-button-lg" pButton type="button" label="ลบงาน">
+              <i class="pi pi-times"iconPos="left"></i>
+            </button>
+            <button  (click)="editpost()" class="p-button-lg" pButton type="button"  label="แก้ไขงาน">
+              <i class="pi pi-palette"iconPos="left"></i>
+            </button>
+            <button class="p-button-lg" pButton type="button" label="logout" (click)="logout()">
+              <i class="pi pi-power-off"iconPos="left"></i>
+            </button>
            </div>
 
        </div>
@@ -59,7 +67,9 @@
                 <td>{{senddata.email}}</td>
                 <td>{{senddata.name}}</td>
 
-                <td><button (click)="openfile(senddata.id)" pButton type="button" class="p-button-help p-button-lg" label="กดเพื่อเปิดไฟล์" icon="pi pi-prime" iconPos="left"></button></td>
+                <td><button (click)="openfile(senddata.id)" pButton type="button" class="p-button-help p-button-lg" label="กดเพื่อเปิดไฟล์">
+                  <i class="pi pi-file-excel"iconPos="left"></i>
+                </button></td>
 
               </tr>
         </ng-template>

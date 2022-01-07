@@ -10,7 +10,7 @@
 
        <div class="container-fluid">
            <div class="navbar-header">
-               <a class="navbar-brand" style="color:Tomato;">ระบบส่งเสริมพัฒนาการศึกษาห้องเรียนออนไลน์</a>
+               <a [routerLink]="['/mainclass']" class="navbar-brand" style="color:Tomato;">ระบบส่งเสริมพัฒนาการศึกษาห้องเรียนออนไลน์</a>
 
            </div>
            <ul class="nav navbar-nav">
@@ -22,7 +22,9 @@
 
            </p>
            <div class="out">
-            <button class="p-button-lg" pButton type="button" label="logout" (click)="logout()" icon="pi pi-google"iconPos="left"></button>
+            <button class="p-button-lg" pButton type="button" label="Logout" (click)="logout()">
+              <i class="pi pi-power-off"iconPos="left"></i>
+            </button>
            </div>
 
        </div>
@@ -33,6 +35,7 @@
   <main>
 
       <div class="text">
+        <h3 align="center">สร้างชั้นเรียน</h3>
         <div [formGroup]="saveroom"class="text">
           <input formControlName="Nameroom" type="text" pInputText class="p-inputtext-lg"   placeholder="ชื่อห้องเรียน:">
         <input  formControlName="subject"type="text" pInputText class="p-inputtext-lg"  placeholder="วิชา:">
@@ -40,10 +43,16 @@
         </div>
         <input  type="text" pInputText class="p-inputtext-lg" placeholder="รหัสเข้าห้อง:"[value]="random">
 
-        <button id="generate"class="p-button-lg" (click)="click()" pButton type="button" label="สุ่มรหัสชั้นเรียน"  icon="pi pi-key"iconPos="left"></button>
+        <button id="generate"class="p-button-lg" (click)="click()" pButton type="button" label="สุ่มรหัสชั้นเรียน">
+          <i class="pi pi-key"iconPos="left"></i>
+        </button>
         <div class="bu">
-          <button pButton pRipple type="button" (click)="addclassroom()" label="สร้างชั้นเรียน" class="p-button-success p-button-lg"></button>
-          <button pButton pRipple type="button" (click)="back()" label="กลับไปที่หน้าชั้นเรียน" class="p-button-danger p-button-lg"></button>
+          <button pButton pRipple type="button" (click)="addclassroom()" label="สร้างชั้นเรียน" class="p-button-success p-button-lg">
+            <i class="pi pi-check"iconPos="left"></i>
+          </button>
+          <button pButton pRipple type="button" (click)="back()" label="กลับไปที่หน้าชั้นเรียน" class="p-button-danger p-button-lg">
+            <i class="pi pi-arrow-left"iconPos="left"></i>
+          </button>
 
         </div>
 

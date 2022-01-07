@@ -28,6 +28,8 @@ import { ReportComponent } from './report/report.component';
 import { UpdataroomComponent } from './updataroom/updataroom.component';
 import { UpdatepostComponent } from './updatepost/updatepost.component';
 
+import {ImageModule} from 'primeng/image';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,6 +45,7 @@ import { UpdatepostComponent } from './updatepost/updatepost.component';
     ReportComponent,
     UpdataroomComponent,
     UpdatepostComponent,
+    
 
 
 
@@ -58,6 +61,7 @@ import { UpdatepostComponent } from './updatepost/updatepost.component';
     ReactiveFormsModule,
     TableModule,
     AngularFileUploaderModule,FileUploadModule,
+    ImageModule,
   ],
   providers: [
     ApiserviceService,

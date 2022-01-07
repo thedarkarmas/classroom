@@ -9,7 +9,7 @@ import { ApiserviceService } from '../apiservice.service';
   styleUrls: ['./room.component.scss']
 })
 export class RoomComponent implements OnInit {
-
+  isShown: boolean = false ;
   public userdetails:any;
   public passdetails:any;
   public roledetails:any;
@@ -22,6 +22,7 @@ export class RoomComponent implements OnInit {
   public datasend:any;
   public senddata:any;
   public datastorage:any;
+  public roleddetails:any;
 
   cars=[]
   constructor( private router:Router,
@@ -52,6 +53,21 @@ export class RoomComponent implements OnInit {
       this.logout();
 
     }
+    this.service.getroledata(this.userdetails.email).subscribe((userSQL)=>{
+      this.roledetails=userSQL.data
+    console.log(this.roledetails)
+      Object.keys(this.roledetails).forEach(key => {
+
+        console.log(this.roledetails[key].role)
+      if(this.roledetails[key].role=='ผู้สอน') {
+
+        this.isShown = ! this.isShown;
+
+      }
+
+      })
+    })
+
     this.service.getpostroomdata(myArray[2]).subscribe(res=>{
       this.passdetails=res.data
 
@@ -74,6 +90,7 @@ export class RoomComponent implements OnInit {
       this.cars=this.datastorage
 
     })
+
   }
   logout(){
 

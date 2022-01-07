@@ -11,7 +11,6 @@
        <div class="container-fluid">
            <div class="navbar-header">
                <a class="navbar-brand" style="color:Tomato;">ระบบส่งเสริมพัฒนาการศึกษาห้องเรียนออนไลน์</a>
-
            </div>
            <ul class="nav navbar-nav">
 
@@ -19,10 +18,12 @@
 
            <p class="head">
              {{userdetails?.email}}
-
            </p>
            <div class="out">
-            <button class="p-button-lg" pButton type="button" label="logout"  icon="pi pi-google"iconPos="left"></button>
+            <button class="p-button-lg" pButton type="button" label="Logout" (click)="logout()">
+              <i class="pi pi-power-off"iconPos="left"></i>
+            </button>
+
            </div>
 
        </div>
@@ -35,16 +36,19 @@
 
 <div  class="add">
   <div *ngIf="isShown" class="row container-fluid"  id="divshow" >
-    <button class="p-button-lg" pButton type="button" label="สร้างห้องเรียน" (click)="add()"   icon="pi pi-plus"iconPos="left"></button>
+    <button class="p-button-lg" pButton type="button" label="สร้างห้องเรียน" (click)="add()">
+      <i class="pi pi-plus"iconPos="left"></i>
+    </button>
   </div>
 
- <button class="p-button-lg" pButton type="button"(click)="join()" label="เข้าร่วมชั้นเรียน" icon="pi pi-heart-fill"iconPos="left"></button>
+ <button class="p-button-lg" pButton type="button"(click)="join()" label="เข้าร่วมชั้นเรียน">
+  <i class="pi pi-plus"iconPos="left"></i>
+ </button>
 </div>
 <h2 align="center">ชั้นเรียน</h2>
-<p-table  [value]="cars">
+<p-table  [value]="cars" >
   <ng-template pTemplate="header">
       <tr>
-
           <th>ชื่อห้องเรียน:</th>
 
           <th>ปุ่ม</th>
@@ -54,7 +58,9 @@
       <tr>
 
           <td>{{car.room}}</td>
-          <td><button [routerLink]="['/room',car.passroom]" pButton (click)="getin(car.passroom)" type="button" class="p-button-help p-button-lg" label="เข้าร่วมชั้นเรียน" icon="pi pi-prime" iconPos="left"></button></td>
+          <td><button  [routerLink]="['/room',car.passroom]" pButton (click)="getin(car.passroom)" type="button" class="p-button-help p-button-lg" label="เข้าร่วมชั้นเรียน">
+            <i class="pi pi-prime"iconPos="left"></i>
+          </button></td>
 
         </tr>
   </ng-template>
